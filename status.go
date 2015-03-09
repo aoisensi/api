@@ -39,7 +39,7 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "", http.StatusMethodNotAllowed)
 		return
 	}
-	if time.Now().Sub(statusCacheTime).Minutes() > 1.0 {
+	if time.Now().Sub(statusCacheTime) > time.Minute {
 		statusSteam()
 		statusCache.Update = time.Now().Unix()
 	}
