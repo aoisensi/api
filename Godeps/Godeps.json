@@ -1,5 +1,10 @@
 {
 	"ImportPath": "github.com/aoisensi/api",
 	"GoVersion": "go1.4.2",
-	"Deps": []
+	"Deps": [
+		{
+			"ImportPath": "github.com/aoisensi/steam4go",
+			"Rev": "a3d9b251f1bdd1245635755f9d67385d4ce26d19"
+		}
+	]
 }
