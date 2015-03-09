@@ -7,6 +7,7 @@ import (
 )
 
 func yoHandler(w http.ResponseWriter, r *http.Request) {
+	setup(w)
 	if r.Method != "POST" {
 		http.Error(w, "", http.StatusMethodNotAllowed)
 		return
