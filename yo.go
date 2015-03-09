@@ -1,14 +1,16 @@
 package main
 
 import (
-	"log"
 	"net/http"
 	"net/url"
 	"os"
 )
 
 func yoHandler(w http.ResponseWriter, r *http.Request) {
-	log.Println("yo")
+	if r.Method != "POST" {
+		http.Error(w, "", http.StatusMethodNotAllowed)
+		return
+	}
 	v := url.Values{
 		"username":  {os.Getenv("YO_ID")},
 		"api_token": {os.Getenv("YO_API")},
